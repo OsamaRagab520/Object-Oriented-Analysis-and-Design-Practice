@@ -75,13 +75,13 @@ class Inventory:
     def guitars(self):
         return self.__guitars
 
-    def add_guitar(self, guitar):
+    def add_guitar(self, serial_number, price, spec):
 
-        if isinstance(guitar, Guitar):
-            self.__guitars.append(guitar)
+        if isinstance(spec, GuitarSpec):
+            self.__guitars.append(Guitar(serial_number, price, spec))
             return True
         else:
-            print("the object added must be a Guitar instance")
+            print("the object added must be a GuitarSpec instance")
             return False
 
     def search(self, guitar_spec):
